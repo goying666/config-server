@@ -90,4 +90,4 @@ eureka:
         prefer-ip-address: true
         ip-address: ${aliyun.server}
 aliyun:
-    server: 47.106.149.105
+    server: 47.106.149.1051
