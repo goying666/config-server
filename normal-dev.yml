@@ -53,19 +53,22 @@ spring:
             value-serializer: org.apache.kafka.common.serialization.StringSerializer
             batch-size: 65536
             buffer-memory: 524288
+
 mybatis:
     mapper-locations: classpath:mapper/*.xml
     type-aliases-package: com.renchaigao.zujuba.model
+
 mapper:
     mappers:  com.renchaigao.zujuba.dao.mapper
     not-empty: false
     identity: MYSQL
-#pagehelper
+
 pagehelper:
     helperDialect: mysql
     reasonable: true
     supportMethodsArguments: true
     params: count=countSql
     returnPageInfo: check
+
 aliyun:
     server: 47.106.149.105
