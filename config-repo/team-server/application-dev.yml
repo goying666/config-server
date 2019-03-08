@@ -1,1 +1,93 @@
-from: 5
+spring:
+    datasource:
+        name: test
+        url: jdbc:mysql://${aliyun.server}:3306/zjb?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+        username: root
+        password: 123
+        # 使用druid数据源
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        filters: stat
+        maxActive: 20
+        initialSize: 1
+        maxWait: 60000
+        minIdle: 1
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxPoolPreparedStatementPerConnectionSize: 20
+        maxOpenPreparedStatements: 20
+    servlet:
+        multipart:
+            max-file-size: 50MB
+            max-request-size: 30MB
+    data:
+        mongodb:
+            host: ${aliyun.server}
+            port: 27017
+    #        uri: mongodb://${aliyun.server}:27017
+    #        username: admin
+    #        password: 123
+            database: zjb
+    redis:
+        host: ${aliyun.server}
+        port: 6379
+        password: rootredis
+        jedis:
+            pool:
+                max-active: 8
+    kafka:
+        bootstrap-servers: ${aliyun.server}:9092
+        zookeeper:
+            connect: ${aliyun.server}:2181
+        consumer:
+            group-id: defaultGroup
+            key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        producer:
+            key-serializer: org.apache.kafka.common.serialization.StringSerializer
+            value-serializer: org.apache.kafka.common.serialization.StringSerializer
+            batch-size: 65536
+            buffer-memory: 524288
+
+#        authentication-database: admin
+#        uri: mongodb://admin:123@${aliyun.server}:27017/zjb
+
+mybatis:
+    mapper-locations: classpath:mapper/*.xml
+    type-aliases-package: com.renchaigao.zujuba.model
+
+mapper:
+    mappers:  com.renchaigao.zujuba.dao.mapper
+    not-empty: false
+    identity: MYSQL
+
+#pagehelper
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+    returnPageInfo: check
+
+eureka:
+    server:
+        url: ${aliyun.server}
+        port: 7813
+    client:
+#        healthcheck:
+#            enabled: true
+        service-url:
+            defaultZone: http://${eureka.server.url}:${eureka.server.port}/eureka/
+    instance:
+        lease-expiration-duration-in-seconds: 30
+        lease-renewal-interval-in-seconds: 20
+        instance-id: ${spring.cloud.client.ip-address}:${server.port}
+        prefer-ip-address: true
+        ip-address: ${aliyun.server}
+aliyun:
+    server: 47.106.149.105
