@@ -91,3 +91,4 @@ eureka:
         ip-address: ${aliyun.server}
 aliyun:
     server: 47.106.149.105
+conf: gaoyan
