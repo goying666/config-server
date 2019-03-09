@@ -40,3 +40,6 @@ zuul:
         config:
             path: /config/**
             serviceId: config-server
+        taskflow:
+            path: /taskflow/**
+            serviceId: taskflow-server
