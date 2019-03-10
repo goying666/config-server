@@ -1,0 +1,6 @@
+spring:
+    kafka:
+        consumer:
+            group-id: playerGroup
+            key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
