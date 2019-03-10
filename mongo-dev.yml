@@ -7,3 +7,6 @@ spring:
     #        username: admin
     #        password: 123
             database: zjb
+
+aliyun:
+    server: 47.106.149.105
