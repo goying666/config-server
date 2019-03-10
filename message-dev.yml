@@ -16,6 +16,6 @@ spring:
 spring:
     kafka:
         consumer:
-            group-id: clubGroup
+            group-id: messageGroup
             key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
             value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
