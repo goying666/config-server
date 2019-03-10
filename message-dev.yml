@@ -19,3 +19,6 @@ spring:
             group-id: messageGroup
             key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
             value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+aliyun:
+    server: 47.106.149.105
