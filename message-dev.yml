@@ -2,18 +2,17 @@ spring:
     data:
         mongodb:
             normal:
+                host: ${aliyun.server}
+                port: 27017
                 database: zjb
-                host: ${aliyun.server}
-                port: 27017
-                username: admin
-                password: 123
+#                username: admin
+#                password: 123
             message:
-                database: message
                 host: ${aliyun.server}
                 port: 27017
-                username: admin
-                password: 123
-spring:
+                database: message
+#                username: admin
+#                password: 123
     kafka:
         consumer:
             group-id: messageGroup
