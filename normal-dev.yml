@@ -45,10 +45,10 @@ spring:
         bootstrap-servers: ${aliyun.server}:9092
         zookeeper:
             connect: ${aliyun.server}:2181
-        consumer:
-            group-id: defaultGroup
-            key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-            value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#        consumer:
+#            group-id: defaultGroup
+#            key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#            value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
         producer:
             key-serializer: org.apache.kafka.common.serialization.StringSerializer
             value-serializer: org.apache.kafka.common.serialization.StringSerializer
