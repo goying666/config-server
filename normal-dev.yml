@@ -26,14 +26,6 @@ spring:
         multipart:
             max-file-size: 50MB
             max-request-size: 30MB
-    data:
-        mongodb:
-            host: ${aliyun.server}
-            port: 27017
-    #        uri: mongodb://${aliyun.server}:27017
-    #        username: admin
-    #        password: 123
-            database: zjb
     redis:
         host: ${aliyun.server}
         port: 6379
