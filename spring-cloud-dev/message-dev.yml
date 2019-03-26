@@ -1,0 +1,23 @@
+spring:
+    data:
+        mongodb:
+            normal:
+                host: ${aliyun.server}
+                port: 27017
+                database: zjb
+#                username: admin
+#                password: 123
+            message:
+                host: ${aliyun.server}
+                port: 27017
+                database: message
+#                username: admin
+#                password: 123
+    kafka:
+        consumer:
+            group-id: messageGroup
+            key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+aliyun:
+    server: 47.106.149.105

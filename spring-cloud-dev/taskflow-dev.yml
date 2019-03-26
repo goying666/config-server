@@ -1,0 +1,13 @@
+spring:
+    data:
+        mongodb:
+              host: ${aliyun.server}
+              port: 27017
+              database: taskflow
+    kafka:
+        consumer:
+            group-id: taskflowGroup
+            key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+aliyun:
+    server: 47.106.149.105

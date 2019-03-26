@@ -1,0 +1,12 @@
+spring:
+    data:
+        mongodb:
+            host: ${aliyun.server}
+            port: 27017
+    #        uri: mongodb://${aliyun.server}:27017
+    #        username: admin
+    #        password: 123
+            database: zjb
+
+aliyun:
+    server: 47.106.149.105

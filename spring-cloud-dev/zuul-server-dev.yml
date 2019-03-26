@@ -1,0 +1,45 @@
+zuul:
+    max:
+        host:
+            connections: 500
+    host:
+        socket-timeout-millis: 60000
+        connect-timeout-millis: 60000
+    routes:
+        user:
+            path: /user/**
+            serviceId: user-server
+#            url: http://47.106.149.105:7814/user
+        team:
+            path: /team/**
+            serviceId: team-server
+        store:
+            path: /store/**
+            serviceId: store-server
+        player:
+            path: /player/**
+            serviceId: player-server
+        message:
+            path: /message/**
+            serviceId: message-server
+        game:
+            path: /game/**
+            serviceId: game-server
+        place:
+            path: /place/**
+            serviceId: place-server
+        photo:
+            path: /photo/**
+            serviceId: photo-server
+        club:
+            path: /club/**
+            serviceId: club-server
+        erueka:
+            path: /erueka/**
+            serviceId: erueka-server
+        config:
+            path: /config/**
+            serviceId: config-server
+        taskflow:
+            path: /taskflow/**
+            serviceId: taskflow-server
